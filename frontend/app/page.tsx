@@ -2,24 +2,18 @@
 
 import Image from "next/image";
 import { useState, useEffect, useMemo } from "react";
+import { COLOR_PALETTE, getHoverColor } from "@/lib/palette";
 
 export default function Home() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
-  const [currentTime, setCurrentTime] = useState(new Date());
+
   
   // Random background color on mount
   const bgColor = useMemo(() => {
-    const colors = ['#172B79', '#9C562D', '#759E70', '#89764E'];
-    return colors[Math.floor(Math.random() * colors.length)];
+    return COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
   }, []);
 
-  // Update time every second
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
+
 
   const photos = [
     {
@@ -58,28 +52,19 @@ export default function Home() {
   };
 
   return (
-    <div className="h-screen text-black p-8 overflow-hidden relative" style={{ backgroundColor: bgColor }}>
+    <div className="min-h-screen text-black p-4 sm:p-6 md:p-8 overflow-hidden relative" style={{ backgroundColor: bgColor }}>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
       `}</style>
       
-      {/* HUD Decorative Elements */}
-      <div className="absolute top-4 left-4 text-[#CCFF00] text-sm font-mono tracking-tight bg-black px-3 py-2 border-2 border-[#CCFF00]" style={{ fontFamily: "'Press Start 2P', monospace" }}>
-        {formatTime(currentTime)}
-      </div>
-      <div className="absolute top-4 right-4 text-[#CCFF00] text-xs font-mono">
-        + ACTIVE
-      </div>
-      <div className="absolute bottom-4 left-4 text-black text-xs font-mono opacity-40">
-        ||||||||||||||||||||
-      </div>
+
       
       <main className="max-w-7xl mx-auto h-full flex flex-col">
         {/* Header */}
-        <header className="text-center mb-4 flex-shrink-0 relative">
+        <header className="text-center mb-4 sm:mb-6 flex-shrink-0 relative">
           <div className="inline-block relative">
             <h1 
-              className="text-3xl font-black border-8 border-black inline-block px-8 py-4 bg-white shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+              className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-black border-4 sm:border-6 md:border-8 border-black inline-block px-3 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
               style={{
                 fontFamily: "'Press Start 2P', monospace",
                 transform: 'perspective(500px) rotateX(-2deg)',
@@ -89,21 +74,20 @@ export default function Home() {
               INCREFF STARTER PACK
             </h1>
             {/* Crosshair accent */}
-            <div className="absolute -top-3 -right-3 text-[#CCFF00] text-3xl font-bold">+</div>
+            
           </div>
           {/* Thin divider line */}
-          <div className="w-full h-[2px] bg-black mt-4 opacity-20"></div>
+          <div className="w-full h-[2px] bg-black mt-3 sm:mt-4 opacity-20"></div>
         </header>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1 overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 flex-1 overflow-hidden">
           {/* Photo Gallery - Takes 2 columns */}
-          <div className="lg:col-span-2 border-4 border-black bg-white p-6 relative overflow-hidden flex flex-col shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+          <div className="lg:col-span-2 border-2 sm:border-4 border-black bg-white p-3 sm:p-4 md:p-6 relative overflow-hidden flex flex-col shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
             {/* HUD Corner Brackets */}
-            <div className="absolute top-2 left-2 text-[#CCFF00] text-lg font-mono">[ </div>
-            <div className="absolute top-2 right-2 text-[#CCFF00] text-lg font-mono"> ]</div>
+           
             
-            <div className="flex-1 bg-black relative flex items-center justify-center overflow-hidden border-4 border-black">
+            <div className="flex-1  relative flex items-center justify-center overflow-hidden border-2 sm:border-4 border-black min-h-[250px] sm:min-h-[350px] md:min-h-[400px]">
               <Image
                 src={photos[currentPhoto].url}
                 alt={`Photo ${currentPhoto + 1}`}
@@ -115,59 +99,62 @@ export default function Home() {
               {/* Navigation Arrows - 8-bit style */}
               <button
                 onClick={prevPhoto}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-[#CCFF00] text-7xl font-black hover:text-white transition-colors z-10 bg-black border-4 border-[#CCFF00] w-20 h-20 flex items-center justify-center font-mono"
+                className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-5xl md:text-7xl font-black transition-all z-10   w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100"
+                style={{ fontFamily: "'Press Start 2P', monospace" }}
                 aria-label="Previous photo"
               >
                 ‹
               </button>
               <button
                 onClick={nextPhoto}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#CCFF00] text-7xl font-black hover:text-white transition-colors z-10 bg-black border-4 border-[#CCFF00] w-20 h-20 flex items-center justify-center font-mono"
+                className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-5xl md:text-7xl font-black transition-all z-10    w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100"
+                style={{ fontFamily: "'Press Start 2P', monospace" }}
                 aria-label="Next photo"
               >
                 ›
               </button>
 
               {/* Photo counter HUD */}
-              <div className="absolute bottom-4 right-4 bg-black border-2 border-[#CCFF00] px-4 py-2 text-[#CCFF00] font-mono text-sm z-10">
+              <div className="absolute bottom-2 right-2 sm:bottom-4 sm:right-4  bg-opacity-80 border-2 border-white px-2 py-1 sm:px-4 sm:py-2 text-white font-mono text-xs sm:text-sm z-10" style={{ fontFamily: "'Press Start 2P', monospace" }}>
                 [{currentPhoto + 1}/{photos.length}]
               </div>
             </div>
             
-            <div className="mt-4 text-center">
-              <h2 className="text-2xl font-black" style={{ fontFamily: "'Press Start 2P', monospace" }}>
-                /// PHOTOS
+            <div className="mt-3 sm:mt-4 text-center">
+              <h2 className="text-sm sm:text-xl md:text-2xl font-black" style={{ fontFamily: "'Press Start 2P', monospace" }}>
+                /// EVENT
               </h2>
             </div>
           </div>
 
           {/* Right Sidebar */}
-          <div className="flex flex-col gap-6 overflow-hidden">
+          <div className="flex flex-col gap-4 sm:gap-6 overflow-hidden">
             {/* Spotify Player */}
-            <div className="border-4 border-black bg-white p-4 flex-shrink-0 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
+            <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-shrink-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               <div className="w-full">
                 <iframe
-                  src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0"
-                  width="100%"
+                  src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg?utm_source=generator&theme=0"  
                   height="352"
+                  width={"100%"}
                   frameBorder="0"
                   allowFullScreen
                   allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                   loading="lazy"
                  
                   style={{ borderRadius: 0 }}
+                  className="min-h-[250px] sm:min-h-[300px]"
                 ></iframe>
               </div>
             </div>
 
             {/* Summary */}
-            <div className="border-4 border-black bg-white p-4 flex-1 overflow-hidden flex flex-col shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative min-h-0">
+            <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-1 overflow-hidden flex flex-col shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative min-h-[150px] sm:min-h-0">
               <div className="absolute top-2 left-2 text-[#CCFF00] text-xs font-mono">|||</div>
-              <h3 className="text-xs font-black mb-3 pb-2 border-b-2 border-black flex-shrink-0" style={{ fontFamily: "'Press Start 2P', monospace" }}>
+              <h3 className="text-[10px] sm:text-xs font-black mb-2 sm:mb-3 pb-2 border-b-2 border-black flex-shrink-0" style={{ fontFamily: "'Press Start 2P', monospace" }}>
                 [SUMMARY]
               </h3>
               <div className="flex-1 overflow-y-auto pr-2">
-                <p className="text-sm font-bold leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+                <p className="text-xs sm:text-sm font-bold leading-relaxed" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                   {photos[currentPhoto].summary}
                 </p>
               </div>
