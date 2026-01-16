@@ -2,37 +2,28 @@
 
 import Image from "next/image";
 import { useState, useEffect, useMemo } from "react";
+import { useRouter } from "next/navigation";
 import { COLOR_PALETTE, getHoverColor } from "@/lib/palette";
+import { STORIES } from "@/lib/stories";
 
 export default function Home() {
   const [currentPhoto, setCurrentPhoto] = useState(0);
+  const [bgColor, setBgColor] = useState<string>(COLOR_PALETTE[0]); // Start with first color for SSR
+  const router = useRouter();
 
-  
-  // Random background color on mount
-  const bgColor = useMemo(() => {
-    return COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)];
+  // Set random background color after mount (client-side only)
+  useEffect(() => {
+    setBgColor(COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)]);
   }, []);
 
 
 
-  const photos = [
-    {
-      url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop",
-      summary: "Mountain landscapes offer breathtaking views and serene environments. The crisp air and vast horizons create perfect moments for reflection and adventure. Nature's raw beauty stands unmatched in these elevated terrains."
-    },
-    {
-      url: "https://images.unsplash.com/photo-1511593358241-7eea1f3c84e5?w=800&h=600&fit=crop",
-      summary: "Coastal regions bring together the power of ocean waves with sandy shores. The rhythmic sound of water creates a meditative atmosphere. These environments showcase nature's dynamic energy and peaceful coexistence."
-    },
-    {
-      url: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
-      summary: "Forest pathways lead to discovery and exploration. Dense canopies filter sunlight creating magical atmospheric conditions. These natural corridors invite wanderers to embrace the wilderness and find their path."
-    },
-    {
-      url: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&h=600&fit=crop",
-      summary: "Desert landscapes demonstrate nature's adaptability and stark beauty. Endless horizons and unique geological formations tell stories of time. The silence and vastness create profound experiences of solitude."
-    },
-  ];
+  const photos = STORIES.map(story => ({
+    id: story.id,
+    url: story.thumbnail,
+    summary: story.summary,
+    title: story.title
+  }));
 
   const nextPhoto = () => {
     setCurrentPhoto((prev) => (prev + 1) % photos.length);
@@ -52,32 +43,60 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen text-black p-4 sm:p-6 md:p-8 overflow-hidden relative" style={{ backgroundColor: bgColor }}>
+    <div className="min-h-screen text-black p-4 sm:p-6 md:p-8 overflow-hidden relative" style={{ backgroundColor: '#ffffff' }}>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        
+        @keyframes arrowBounce {
+          0%, 100% {
+            transform: translateX(0);
+          }
+          50% {
+            transform: translateX(10px);
+          }
+        }
+        
+        .arrow-hover:hover .arrow-icon {
+          animation: arrowBounce 0.6s ease-in-out infinite;
+        }
       `}</style>
       
-
       
       <main className="max-w-7xl mx-auto h-full flex flex-col">
         {/* Header */}
-        <header className="text-center mb-4 sm:mb-6 flex-shrink-0 relative">
-          <div className="inline-block relative">
-            <h1 
-              className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-black border-4 sm:border-6 md:border-8 border-black inline-block px-3 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
-              style={{
-                fontFamily: "'Press Start 2P', monospace",
-                transform: 'perspective(500px) rotateX(-2deg)',
-                lineHeight: '1.6'
-              }}
-            >
-              INCREFF STARTER PACK
-            </h1>
-            {/* Crosshair accent */}
+        <header className="mb-4 sm:mb-6 flex-shrink-0">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            {/* Spacer for alignment on desktop */}
+            <div className="hidden sm:block sm:w-32 md:w-40"></div>
             
+            {/* Title - centered */}
+            <div className="flex-shrink-0">
+              <h1 
+                className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-black border-4 sm:border-6 md:border-8 border-black inline-block px-3 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
+                style={{
+                  fontFamily: "'Press Start 2P', monospace",
+                  transform: 'perspective(500px) rotateX(-2deg)',
+                  lineHeight: '1.6'
+                }}
+              >
+                INCREFF STARTER PACK
+              </h1>
+            </div>
+            
+            {/* Meet People Button - right aligned on desktop, centered on mobile */}
+            <button
+              onClick={() => router.push('/people')}
+              className="arrow-hover group flex-shrink-0"
+              aria-label="Meet the team"
+            >
+              <div className="flex items-center gap-1.5 sm:gap-2 bg-white border-2 border-black px-2 py-1.5 sm:px-3 sm:py-2 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 group-hover:translate-x-[-2px] group-hover:translate-y-[-2px]">
+                <span className="text-[8px] sm:text-[10px] font-black whitespace-nowrap" style={{ fontFamily: "'Press Start 2P', monospace" }}>
+                  MEET PEOPLE
+                </span>
+                <span className="text-sm sm:text-base arrow-icon transition-transform">→</span>
+              </div>
+            </button>
           </div>
-          {/* Thin divider line */}
-          <div className="w-full h-[2px] bg-black mt-3 sm:mt-4 opacity-20"></div>
         </header>
 
         {/* Main Content Grid */}
@@ -87,18 +106,30 @@ export default function Home() {
             {/* HUD Corner Brackets */}
            
             
-            <div className="flex-1  relative flex items-center justify-center overflow-hidden border-2 sm:border-4 border-black min-h-[250px] sm:min-h-[350px] md:min-h-[400px]">
+            <div className="flex-1  relative flex items-center justify-center overflow-hidden border-2 sm:border-4 border-black min-h-[250px] sm:min-h-[350px] md:min-h-[400px] cursor-pointer group"
+              onClick={() => router.push(`/story/${photos[currentPhoto].id}`)}
+            >
               <Image
                 src={photos[currentPhoto].url}
                 alt={`Photo ${currentPhoto + 1}`}
                 fill
-                className="object-cover grayscale contrast-125"
+                className="object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-300"
                 unoptimized
               />
               
+              {/* Click to view overlay */}
+              <div className="absolute inset-0  opacity-50 bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center z-10">
+                <div className="opacity-0  group-hover:opacity-75 transition-opacity duration-300 text-white text-xs sm:text-sm md:text-base font-black border-4 border-white px-6 py-3 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]" style={{ fontFamily: "'Press Start 2P', monospace", letterSpacing: '0.1em' }}>
+                  CLICK TO VIEW
+                </div>
+              </div>
+              
               {/* Navigation Arrows - 8-bit style */}
               <button
-                onClick={prevPhoto}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevPhoto();
+                }}
                 className="absolute left-1 sm:left-2 md:left-4 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-5xl md:text-7xl font-black transition-all z-10   w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100"
                 style={{ fontFamily: "'Press Start 2P', monospace" }}
                 aria-label="Previous photo"
@@ -106,7 +137,10 @@ export default function Home() {
                 ‹
               </button>
               <button
-                onClick={nextPhoto}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextPhoto();
+                }}
                 className="absolute right-1 sm:right-2 md:right-4 top-1/2 -translate-y-1/2 text-white text-3xl sm:text-5xl md:text-7xl font-black transition-all z-10    w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center opacity-50 hover:opacity-100"
                 style={{ fontFamily: "'Press Start 2P', monospace" }}
                 aria-label="Next photo"
