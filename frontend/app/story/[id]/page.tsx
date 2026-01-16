@@ -139,6 +139,16 @@ export default function StoryPage() {
               [STORY]
             </h3>
             
+            {/* Date and Time */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <div className="bg-black text-white px-3 py-1.5 text-[10px] sm:text-xs font-mono">
+                 {story.date}
+              </div>
+              <div className="bg-black text-white px-3 py-1.5 text-[10px] sm:text-xs font-mono">
+                 {story.time}
+              </div>
+            </div>
+            
             <div className="flex-1 overflow-y-auto pr-2 space-y-4">
               <p className="text-sm sm:text-base leading-relaxed font-bold" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
                 {story.fullStory}

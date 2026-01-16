@@ -6,6 +6,8 @@ export interface StoryData {
   fullStory: string;
   images: string[];
   color: string;
+  date: string; // Date string in format like "Jan 15, 2026"
+  time: string; // Time string in format like "2:30 PM"
 }
 
 export const STORIES: StoryData[] = [
@@ -22,7 +24,9 @@ export const STORIES: StoryData[] = [
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop&sat=-100",
       "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=800&h=600&fit=crop"
     ],
-    color: "#404040"
+    color: "#404040",
+    date: "Jan 15, 2026",
+    time: "2:30 PM"
   },
   {
     id: "intro",
@@ -37,7 +41,9 @@ export const STORIES: StoryData[] = [
       "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=600&fit=crop"
     ],
-    color: "#182B79"
+    color: "#182B79",
+    date: "Jan 16, 2026",
+    time: "10:00 AM"
   },
   {
     id: "forest",
@@ -52,12 +58,14 @@ export const STORIES: StoryData[] = [
       "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&h=600&fit=crop"
     ],
-    color: "#1E4518"
+    color: "#1E4518",
+    date: "Jan 16, 2026",
+    time: "4:45 PM"
   },
   {
-    id: "desert",
-    title: "DESERT ODYSSEY",
-    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczOFmKnC7tuw36O1YgZl5Ga56qm8Ol4HbwF4MInA8QfNNxZ3snBdwD7hEkR5qre5v0_REjU4JJZgKqAyHRJAp1SqKHOdrVEn8xYvJU9VUiDJqig-2L16tyos6x3yT9TdeHeQpHht4uXcf903TfH0sa4m=w2136-h1602-s-no-gm?authuser=0",
+    id: "relcircle",
+    title: "REL CIRCLE",
+    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczMOO0czVa1G0vrkmwIJm4WjTwCCWPOL6Izu4hQHZmxC4qoU3hVLRLwv5gp_moy__bqDmlZVONPpMemjMFrjGCeL8H5yAtqQwpXLZ8xvEwE1lDKNs4TSpMuE7Igf7Him88PJXSPFTOAfLBt1jSp_9D5I=w2136-h1602-s-no-gm?authuser=0",
     summary: "Desert landscapes demonstrate nature's adaptability and stark beauty. Endless horizons and unique geological formations tell stories of time. The silence and vastness create profound experiences of solitude.",
     fullStory: "In the vast expanse where sand meets sky, the desert odyssey unfolds across dunes that shift like ocean waves frozen in time. Here, survival is an art form, practiced by creatures and plants that have adapted to extremes. The scorching days give way to surprisingly cold nights, when stars blaze with unmatched clarity across unpolluted skies. Ancient rock formations bear witness to eons of wind erosion, creating sculptures that rival any human art. Oases appear like miracles, bringing life and hope to the arid landscape. The desert teaches patience, resilience, and the beauty of simplicity. Its silence is not empty but full of subtle sounds - the whisper of wind-blown sand, the call of a distant hawk, the rustle of a lizard's movement.",
     images: [
@@ -67,6 +75,8 @@ export const STORIES: StoryData[] = [
       "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&h=600&fit=crop",
       "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=600&fit=crop"
     ],
-    color: "#9C562D"
+    color: "#9C562D",
+    date: "Jan 17, 2026",
+    time: "6:15 PM"
   }
 ];

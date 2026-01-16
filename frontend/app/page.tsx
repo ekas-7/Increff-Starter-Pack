@@ -22,7 +22,9 @@ export default function Home() {
     id: story.id,
     url: story.thumbnail,
     summary: story.summary,
-    title: story.title
+    title: story.title,
+    date: story.date,
+    time: story.time
   }));
 
   const nextPhoto = () => {
@@ -154,10 +156,18 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="mt-3 sm:mt-4 text-center">
-              <h2 className="text-sm sm:text-xl md:text-2xl font-black" style={{ fontFamily: "'Press Start 2P', monospace" }}>
+            <div className="mt-3 sm:mt-4">
+              <h2 className="text-sm sm:text-xl md:text-2xl font-black text-center mb-2" style={{ fontFamily: "'Press Start 2P', monospace" }}>
                 /// EVENT
               </h2>
+              <div className="flex items-center justify-center gap-2 text-[10px] sm:text-xs font-mono">
+                <div className="bg-black text-white px-2 py-1 border-2 border-black">
+                   {photos[currentPhoto].date}
+                </div>
+                <div className="bg-black text-white px-2 py-1 border-2 border-black">
+                   {photos[currentPhoto].time}
+                </div>
+              </div>
             </div>
           </div>
 
