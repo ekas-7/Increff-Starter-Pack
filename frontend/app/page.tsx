@@ -167,7 +167,7 @@ export default function Home() {
             <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-shrink-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               <div className="w-full">
                 <iframe
-                  src="https://open.spotify.com/embed/playlist/37i9dQZEVXbLZ52XmnySJg?utm_source=generator&theme=0"  
+                  src="https://open.spotify.com/embed/playlist/6nyUtX8WZDkzLpOuGM4M2f?utm_source=generator&theme=0"  
                   height="352"
                   width={"100%"}
                   frameBorder="0"
