@@ -57,7 +57,7 @@ export default function PeoplePage() {
                   src={person.image}
                   alt={person.name}
                   fill
-                  className="object-cover grayscale contrast-125 group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                   unoptimized
                 />
                 {/* Overlay on hover */}

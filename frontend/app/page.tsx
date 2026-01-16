@@ -113,13 +113,13 @@ export default function Home() {
                 src={photos[currentPhoto].url}
                 alt={`Photo ${currentPhoto + 1}`}
                 fill
-                className="object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-300"
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
                 unoptimized
               />
               
               {/* Click to view overlay */}
-              <div className="absolute inset-0  opacity-50 bg-opacity-0 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center z-10">
-                <div className="opacity-0  group-hover:opacity-75 transition-opacity duration-300 text-white text-xs sm:text-sm md:text-base font-black border-4 border-white px-6 py-3 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]" style={{ fontFamily: "'Press Start 2P', monospace", letterSpacing: '0.1em' }}>
+              <div className="absolute inset-0  opacity-50 bg-opacity-0 hover:opacity-100 group-hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center z-10">
+                <div className="opacity-0  group-hover:opacity-75 hover:opacity-100 transition-opacity duration-300 text-white text-xs sm:text-sm md:text-base font-black border-4 border-white px-6 py-3 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]" style={{ fontFamily: "'Press Start 2P', monospace", letterSpacing: '0.1em' }}>
                   CLICK TO VIEW
                 </div>
               </div>

@@ -81,7 +81,7 @@ export default function StoryPage() {
                 src={story.images[currentImage]}
                 alt={`${story.title} - Image ${currentImage + 1}`}
                 fill
-                className="object-cover grayscale contrast-125"
+                className="object-cover"
                 unoptimized
               />
               
@@ -125,7 +125,7 @@ export default function StoryPage() {
                     src={img}
                     alt={`Thumbnail ${idx + 1}`}
                     fill
-                    className="object-cover grayscale contrast-125"
+                    className="object-cover"
                     unoptimized
                   />
                 </button>
