@@ -104,11 +104,11 @@ export default function Home() {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 flex-1 overflow-hidden">
           {/* Photo Gallery - Takes 2 columns */}
-          <div className="lg:col-span-2 border-2 sm:border-4 border-black bg-white p-3 sm:p-4 md:p-6 relative overflow-hidden flex flex-col shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)]">
+          <div className="lg:col-span-2 border-2 sm:border-4 border-black bg-white p-3 sm:p-4 md:p-6 relative overflow-hidden flex flex-col shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] sm:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] h-full max-h-[600px] sm:max-h-[700px] lg:max-h-full">
             {/* HUD Corner Brackets */}
            
             
-            <div className="flex-1  relative flex items-center justify-center overflow-hidden border-2 sm:border-4 border-black min-h-[250px] sm:min-h-[350px] md:min-h-[400px] cursor-pointer group"
+            <div className="flex-1 relative flex items-center justify-center overflow-hidden border-2 sm:border-4 border-black cursor-pointer group"
               onClick={() => router.push(`/story/${photos[currentPhoto].id}`)}
             >
               <Image
@@ -156,7 +156,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="mt-3 sm:mt-4">
+            <div className="mt-3 sm:mt-4 flex-shrink-0">
               <h2 className="text-sm sm:text-xl md:text-2xl font-black text-center mb-2" style={{ fontFamily: "'Press Start 2P', monospace" }}>
                 /// EVENT
               </h2>
@@ -172,7 +172,7 @@ export default function Home() {
           </div>
 
           {/* Right Sidebar */}
-          <div className="flex flex-col gap-4 sm:gap-6 overflow-hidden">
+          <div className="flex flex-col gap-4 sm:gap-6 overflow-hidden h-full max-h-[600px] sm:max-h-[700px] lg:max-h-full">
             {/* Spotify Player */}
             <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-shrink-0 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               <div className="w-full">
@@ -192,7 +192,7 @@ export default function Home() {
             </div>
 
             {/* Summary */}
-            <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-1 overflow-hidden flex flex-col shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative min-h-[150px] sm:min-h-0">
+            <div className="border-2 sm:border-4 border-black bg-white p-3 sm:p-4 flex-1 overflow-hidden flex flex-col shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               <div className="absolute top-2 left-2 text-[#CCFF00] text-xs font-mono">|||</div>
               <h3 className="text-[10px] sm:text-xs font-black mb-2 sm:mb-3 pb-2 border-b-2 border-black flex-shrink-0" style={{ fontFamily: "'Press Start 2P', monospace" }}>
                 [SUMMARY]
