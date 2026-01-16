@@ -66,7 +66,7 @@ export const STORIES: StoryData[] = [
     id: "relcircle",
     title: "REL CIRCLE",
     thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczMOO0czVa1G0vrkmwIJm4WjTwCCWPOL6Izu4hQHZmxC4qoU3hVLRLwv5gp_moy__bqDmlZVONPpMemjMFrjGCeL8H5yAtqQwpXLZ8xvEwE1lDKNs4TSpMuE7Igf7Him88PJXSPFTOAfLBt1jSp_9D5I=w2136-h1602-s-no-gm?authuser=0",
-    summary: "Desert landscapes demonstrate nature's adaptability and stark beauty. Endless horizons and unique geological formations tell stories of time. The silence and vastness create profound experiences of solitude.",
+    summary: "REL CIRCLE IG idk man I AM JUST FILLING UP SPACE PLEASE HELP WITH THIS TEXT TO MAKE IT LONGER AND MORE SUBSTANTIAL THAN IT IS RIGHT NOW.help help help",
     fullStory: "In the vast expanse where sand meets sky, the desert odyssey unfolds across dunes that shift like ocean waves frozen in time. Here, survival is an art form, practiced by creatures and plants that have adapted to extremes. The scorching days give way to surprisingly cold nights, when stars blaze with unmatched clarity across unpolluted skies. Ancient rock formations bear witness to eons of wind erosion, creating sculptures that rival any human art. Oases appear like miracles, bringing life and hope to the arid landscape. The desert teaches patience, resilience, and the beauty of simplicity. Its silence is not empty but full of subtle sounds - the whisper of wind-blown sand, the call of a distant hawk, the rustle of a lizard's movement.",
     images: [
       "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=800&h=600&fit=crop",
@@ -78,5 +78,73 @@ export const STORIES: StoryData[] = [
     color: "#9C562D",
     date: "Jan 17, 2026",
     time: "6:15 PM"
+  },
+  {
+    id: "agartalalake",
+    title: "AGARTALA LAKE",
+    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczO5hyV4WnfkRxn8wMZQ4Uu-sqLWVHuYFabAUo8pJSFKEr3iXGHMApayUhTIe0elqz8c1MqUqY9tvUfvMR0pDoc3JQmuY57K3abivOfp0mjdznoOQ2Uxblb633CGNcgyvBXu4H-3tnljNHcb6riBm_I-=w2136-h1602-s-no-gm?authuser=0",
+    summary: "agartara lake dk man I AM JUST FILLING UP SPACE PLEASE HELP WITH THIS TEXT TO MAKE IT LONGER AND MORE SUBSTANTIAL THAN IT IS RIGHT NOW.help help help",
+    fullStory: "Beneath the emerald canopy, where sunlight filters through leaves in golden shafts, the forest whispers secrets known only to those who listen. Ancient trees stand as silent witnesses to centuries of change, their roots intertwined in underground networks that share nutrients and information. Moss-covered stones mark forgotten paths, mushrooms emerge like tiny umbrellas after rain, and the air is rich with the scent of earth and growth. Deer move like ghosts through the undergrowth, owls call at dusk, and in spring, wildflowers carpet the forest floor in brilliant colors. This is a place of mystery and magic, where nature's complexity is on full display.",
+    images: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&h=600&fit=crop"
+    ],
+    color: "#1E4518",
+    date: "Jan 16, 2026",
+    time: "4:45 PM"
+  },
+  {
+    id: "houseparty",
+    title: "HOUSE PARTY 209",
+    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczOqqjo5-G48Xk9GleI602B0ecttKKuTpb3zwrzMO_ypeRLziFrBCCUGhw3bFf_ABP5LWdDzUSx89EgXuuEQV1Yt3BcDInysAf3JwAz3sDkOrPJWo3vIUPEdjTz7lWhUPoBaL5qOv43X8w8ojcbqUcrS=w2136-h1602-s-no-gm?authuser=0",
+    summary: "TUNa kahna me kya kahya ha JUST FILLING UP SPACE PLEASE HELP WITH THIS TEXT TO MAKE IT LONGER AND MORE SUBSTANTIAL THAN IT IS RIGHT NOW.help help help",
+    fullStory: "Beneath the emerald canopy, where sunlight filters through leaves in golden shafts, the forest whispers secrets known only to those who listen. Ancient trees stand as silent witnesses to centuries of change, their roots intertwined in underground networks that share nutrients and information. Moss-covered stones mark forgotten paths, mushrooms emerge like tiny umbrellas after rain, and the air is rich with the scent of earth and growth. Deer move like ghosts through the undergrowth, owls call at dusk, and in spring, wildflowers carpet the forest floor in brilliant colors. This is a place of mystery and magic, where nature's complexity is on full display.",
+    images: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&h=600&fit=crop"
+    ],
+    color: "#1E4518",
+    date: "Jan 16, 2026",
+    time: "4:45 PM"
+  },
+   {
+    id: "cabcab",
+    title: "Cab cab",
+    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczOFcHnaFRpoCUFKzEdvEr6C82u1FMb5F6ay89lMXUUOTXiSWwS6eePkoTugVgdazhH8HgEakJNkr058uXDrY0ubWUumcQsVTw26H7W4LCKgGkI8LpHa_UAovysdTdjnvkyT6sDSEkSRBucTVKiQECS9=w2136-h1602-s-no-gm?authuser=0",
+    summary: "Gang outing ig  ha JUST FILLING UP SPACE PLEASE HELP WITH THIS TEXT TO MAKE IT LONGER AND MORE SUBSTANTIAL THAN IT IS RIGHT NOW.help help help",
+    fullStory: "Beneath the emerald canopy, where sunlight filters through leaves in golden shafts, the forest whispers secrets known only to those who listen. Ancient trees stand as silent witnesses to centuries of change, their roots intertwined in underground networks that share nutrients and information. Moss-covered stones mark forgotten paths, mushrooms emerge like tiny umbrellas after rain, and the air is rich with the scent of earth and growth. Deer move like ghosts through the undergrowth, owls call at dusk, and in spring, wildflowers carpet the forest floor in brilliant colors. This is a place of mystery and magic, where nature's complexity is on full display.",
+    images: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&h=600&fit=crop"
+    ],
+    color: "#1E4518",
+    date: "Jan 16, 2026",
+    time: "4:45 PM"
+  },
+  {
+    id: "arushibday",
+    title: "Arushi's Birthday",
+    thumbnail: "https://lh3.googleusercontent.com/pw/AP1GczNJG5ZO9jn1VxwkPpAmJvlMmG0AKbk1_NPknnYzMJNEl8RIsFZDIH-9Ov4Paa7GXfKJT9ycwjb4GKtAlIfT0vuH31-tHicnlrKp06ST-MGC-LujSmg2Xdcg1rdvOcZvfKxbBYwbkxaRH2S2cDD1kJi_=w2136-h1602-s-no-gm?authuser=0",
+    summary: "arushi birthday   ha JUST FILLING UP SPACE PLEASE HELP WITH THIS TEXT TO MAKE IT LONGER AND MORE SUBSTANTIAL THAN IT IS RIGHT NOW.help help help",
+    fullStory: "Beneath the emerald canopy, where sunlight filters through leaves in golden shafts, the forest whispers secrets known only to those who listen. Ancient trees stand as silent witnesses to centuries of change, their roots intertwined in underground networks that share nutrients and information. Moss-covered stones mark forgotten paths, mushrooms emerge like tiny umbrellas after rain, and the air is rich with the scent of earth and growth. Deer move like ghosts through the undergrowth, owls call at dusk, and in spring, wildflowers carpet the forest floor in brilliant colors. This is a place of mystery and magic, where nature's complexity is on full display.",
+    images: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1511497584788-876760111969?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1516214104703-d870798883c5?w=800&h=600&fit=crop"
+    ],
+    color: "#1E4518",
+    date: "Jan 16, 2026",
+    time: "4:45 PM"
   }
 ];
