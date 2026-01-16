@@ -33,7 +33,7 @@ export default function PeoplePage() {
               lineHeight: '1.6'
             }}
           >
-            MEET THE TEAM
+            MEET THE PACK
           </h1>
           
           <div className="w-24 sm:w-32 md:w-40"></div>
